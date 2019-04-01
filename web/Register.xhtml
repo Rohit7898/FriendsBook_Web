@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Register an Account</title>
+        <meta http-equiv="cache-control" content="no-cache" />
+        <meta http-equiv="pragma" content="no-cache" />
+        <meta http-equiv="refresh"/>
+        
+    </h:head>
+    <h:body>
+       <body background="login.jpg" class="pic">
+        <h:form>
+            <h3> To register a new friendsbook account!</h3>
+                
+            <p>Please enter your new user ID:<br></br>
+                <h:inputText id="id" required ="true" 
+                             requiredMessage="The ID field cannot be empty"
+                        title="Please enter your ID"
+                        value="#{register.id}"
+                        validatorMessage="The length of your selected 
+                        ID must be between 3 and 10 , should contain a number [0 -9],a special char [#,?,!,*] and an .">
+                    <f:validateLength maximum="10" minimum="3" />
+                    <f:validateRegex pattern="((?=.*\d)(?=.*[a-z])(?=.*[#?!*]).{3,10})"/>
+                </h:inputText>
+            </p>
+             <p>Please enter your selected password:<br></br>
+                 <h:inputText id="password" required ="true" 
+                          requiredMessage="The password field cannot be empty"
+                        title="Please enter your password"
+                        value="#{register.password}"
+                        validatorMessage="The length of your 
+                        password must be between 3 and 20.">
+                    <f:validateLength maximum="20" minimum="3" />
+                 </h:inputText>
+            </p>
+             <p>Please enter your name:<br></br>
+                <h:inputText id="name" required ="true" 
+                          requiredMessage="The name field cannot be empty"
+                        title="Please enter your name"
+                        value="#{register.name}">
+                    <f:validateLength maximum="20" minimum="3" />
+                </h:inputText>
+            </p>
+             <p>Please select your gender:<br></br>
+                 <h:selectOneMenu value="#{register.gender}">
+                     <f:selectItem itemValue="Male" itemLabel="Male"/>
+                     <f:selectItem itemValue="Female" itemLabel="Female"/>
+                 </h:selectOneMenu>               
+            </p>
+             <p>Please enter your school:<br></br>
+                <h:inputText id="school" required ="true" 
+                          requiredMessage="The school field cannot be empty"
+                        title="Please enter your school"
+                        value="#{register.education}"
+                        validatorMessage="The length of your 
+                        school must be between  2 and 20.">
+                    <f:validateLength maximum="20" minimum="2" />
+                </h:inputText>
+            </p>
+             <p>Please enter your birthday:<br></br>
+                <h:inputText id="birthday" required ="true" 
+                          requiredMessage="The birthday field cannot be empty"
+                        title="Please enter your birthday"
+                        value="#{register.birthday}"
+                        validatorMessage="The length of your 
+                        birthday must be between  6 and 15 and should be in the format dd/mm/yyyy.">
+                    <f:validateLength maximum="15" minimum="6" />
+                </h:inputText>
+            </p>
+           
+            
+            <p>
+                <h:commandButton id="submit" value="Submit"
+                                 action="#{register.Regi()}" />
+            </p>
+
+        </h:form>
+       </body>    
+    </h:body>
+</html>
