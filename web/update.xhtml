@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Update profile</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    <h:body>
+        <h:form>
+           
+            <h3>Update Profile</h3>
+            <p>Enter your name
+                <h:inputText id="name" value="#{userbean.user_id}"/>
+            </p>
+                <p>Enter your pass
+                <h:inputText id="password" value="#{loginbean.password}"/>
+            </p>
+            <p>Select your gender:
+                <h:selectOneMenu>
+                    <f:selectItem itemValue="Male" itemLabel="Male"/>
+                     <f:selectItem itemValue="Female" itemLabel="Female"/>
+            
+            </h:selectOneMenu>
+                </p>
+            <p>Enter your school
+                <h:inputText id="education"/>
+            </p>
+             <p>Enter your birthday       
+                <h:inputText id="birthday"/>
+                
+            </p>
+            <p>
+                <h:commandButton id="updateProfileBtn" value="Updateprofile" action="#{u}"/>
+            </p>
+        </h:form>
+    </h:body>
+</html>

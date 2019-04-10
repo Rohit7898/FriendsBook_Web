@@ -109,8 +109,8 @@ public class Register {
             }
             if(names.contains(id))
             {
-                System.out.print("Id already Exist");
-                 return("SQLNoRecords");
+               // System.out.print("Id already Exist");
+                 return("Idexist");
             }
             else
             {

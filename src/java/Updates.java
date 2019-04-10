@@ -4,21 +4,21 @@
  * and open the template in the editor.
  */
 
-import javax.inject.Named;
-import javax.enterprise.context.RequestScoped;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
 
 /**
  *
- * @author AgrawalG1680
+ * @author gowla
  */
-@Named(value = "newJSFManagedBean")
+@ManagedBean
 @RequestScoped
-public class NewJSFManagedBean {
+public class Updates {
 
     /**
-     * Creates a new instance of NewJSFManagedBean
+     * Creates a new instance of Updates
      */
-    public NewJSFManagedBean() {
+    public Updates() {
     }
     
 }
