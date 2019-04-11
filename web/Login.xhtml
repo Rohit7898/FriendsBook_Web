@@ -1,11 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<!DOCTYPE html>
-<html  xmlns="http://www.w3.org/1999/xhtml"
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:b="http://bootsfaces.net/ui"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core">
     <head>
@@ -13,36 +9,110 @@ and open the template in the editor.
          <meta http-equiv="cache-control" content="no-cache" />
          <meta http-equiv="pragma" content="no-cache" />
          <meta http-equiv="refresh"/>
-           
+	<meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css"/>
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css"/>
+	<link rel="stylesheet" type="text/css" href="css/main.css"/>
+<!--===============================================================================================-->
     </head>
-    <body background="login.jpg" class="pic">
-        
-         <h:form>
-            <h3>Login Your Online Access Account!</h3>
-                 
-            <p>Please enter your online access ID:<br></br>
-                <h:inputText id="id" required ="true" 
-                             requiredMessage="The ID field cannot be empty"
-                        title="Please enter your ID"
-                        value="#{loginbean.id}"
-                 validatorMessage="The ID must be between 3 and 20 characters">
-                    <f:validateLength maximum="20" minimum="3" />
-                </h:inputText>
-            </p>
-            
-            <p>Please enter your password:<br></br>
-                <h:inputSecret id="psw" required ="true" 
-                          requiredMessage="The password field cannot be empty"
-                        title="Please enter your psw"
-                        value="#{loginbean.password}"/>
-                     
-            </p>
-            <p>
-                <h:commandButton id="submit" value="Submit"
-                                 action="#{loginbean.createlogin()}"/>
-            </p>
+    <body>
+        <div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<div class="login100-pic js-tilt" >
+					<img src="images/img-01.png" alt="IMG"/>
+				</div>
 
-        </h:form>
-   
+				<b:form class="login100-form validate-form">
+					<span class="login100-form-title">
+						Login Your Online Access Account!
+					</span>
+
+					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+                                            <b:inputText class="input100" id="id" required ="true" 
+                                                 requiredMessage="The ID field cannot be empty"
+                                            title="Please enter your ID"
+                                            value="#{loginbean.id}"
+                                     validatorMessage="The ID must be between 3 and 20 characters"/>
+                                            
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-envelope" aria-hidden="true"></i>
+						</span>
+                                                
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate = "Password is required">
+                                            <b:inputSecret class="input100" id="psw" required ="true" 
+                                              requiredMessage="The password field cannot be empty"
+                                            title="Please enter your psw"
+                                            value="#{loginbean.password}"/>
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-lock" aria-hidden="true"></i>
+						</span>
+					</div>
+					
+					<div class="container-login100-form-btn">
+                                            <h:commandButton class="login100-form-btn" id="submit" value="Submit"
+                                                     action="#{loginbean.createlogin()}"/>
+						
+					</div>
+
+					<div class="text-center p-t-12">
+						<span class="txt1">
+							Forgot
+						</span>
+						<a class="txt2" href="#">
+							Username / Password?
+						</a>
+					</div>
+
+					<div class="text-center p-t-136">
+						<a class="txt2" href="#">
+							Create your Account
+							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+						</a>
+					</div>
+				</b:form>
+                            
+                                        
+			</div>
+		</div>
+	</div>
+	
+	
+
+	
+<!--===============================================================================================-->	
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/tilt/tilt.jquery.min.js"></script>
+	<script >
+		$('.js-tilt').tilt({
+			scale: 1.1
+		})
+	</script>
+<!--===============================================================================================-->
+	<script src="WebPages/js/main.js"></script>
     </body>
 </html>
+
